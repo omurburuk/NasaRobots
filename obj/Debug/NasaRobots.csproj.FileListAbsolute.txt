@@ -1,0 +1,11 @@
+C:\Users\Invenoa\source\repos\NasaRobots\NasaRobots\obj\Debug\NasaRobots.csprojAssemblyReference.cache
+C:\Users\Invenoa\source\repos\NasaRobots\NasaRobots\obj\Debug\NasaRobots.Properties.Resources.resources
+C:\Users\Invenoa\source\repos\NasaRobots\NasaRobots\obj\Debug\NasaRobots.csproj.GenerateResource.cache
+C:\Users\Invenoa\source\repos\NasaRobots\NasaRobots\obj\Debug\NasaRobots.csproj.CoreCompileInputs.cache
+C:\Users\Invenoa\source\repos\NasaRobots\NasaRobots\bin\Debug\NasaRobots.exe.config
+C:\Users\Invenoa\source\repos\NasaRobots\NasaRobots\bin\Debug\NasaRobots.exe
+C:\Users\Invenoa\source\repos\NasaRobots\NasaRobots\bin\Debug\NasaRobots.pdb
+C:\Users\Invenoa\source\repos\NasaRobots\NasaRobots\obj\Debug\NasaRobots.exe
+C:\Users\Invenoa\source\repos\NasaRobots\NasaRobots\obj\Debug\NasaRobots.pdb
+C:\Users\Invenoa\source\repos\NasaRobots\NasaRobots\obj\Debug\NasaRobots.March.resources
+C:\Users\Invenoa\source\repos\NasaRobots\NasaRobots\obj\Debug\NasaRobots.InputForm.resources
