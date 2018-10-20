@@ -151,8 +151,8 @@
             // pictureBox3
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(864, 12);
+            this.pictureBox3.Image = global::NasaRobots.Properties.Resources.compass_PNG25572;
+            this.pictureBox3.Location = new System.Drawing.Point(840, 12);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(102, 101);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -175,7 +175,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImage = global::NasaRobots.Properties.Resources.space_315uqsztl4woiv3nk6xi4g;
             this.ClientSize = new System.Drawing.Size(978, 594);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox3);
@@ -185,6 +185,7 @@
             this.Name = "March";
             this.Text = "March";
             this.Load += new System.EventHandler(this.March_Load);
+            this.Shown += new System.EventHandler(this.March_Shown);
             this._robot1.ResumeLayout(false);
             this._robot1.PerformLayout();
             this._robot2.ResumeLayout(false);

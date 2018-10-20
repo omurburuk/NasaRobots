@@ -16,6 +16,10 @@ namespace NasaRobots
         Robot Robot2;
         Robot onRobot = null;
         InputForm inputForm = null;
+        static int boardWith = 0;
+        static int boardHeight = 0;
+        public static int stepWidth = 0;
+        public static int stepHeight = 0;
         public March()
         {
             InitializeComponent();
@@ -25,41 +29,53 @@ namespace NasaRobots
         {
             this.KeyPreview = true;
             this.KeyPress +=
-                new KeyPressEventHandler(KeyListener);
-            _robot1.Location = new Point(50, 250);
-            _robot2.Location = new Point(500, 250);
-            Robot1 = new Robot(50, 250, _robot1);
-            Robot2 = new Robot(500, 250, _robot2);
+                new KeyPressEventHandler(KeyListener); 
             this.Width = 650;
             this.Height = 450;
-            enterFirstLocation();
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            _robot1.Location = new Point(50, 250);
+            _robot2.Location = new Point(500, 250);
+            getBoardSizes();
+            this.Hide();
         }
-        void KeyListener(object sender, KeyPressEventArgs e)
+        public void setConfiguration()
+        { 
+            Robot1 = new Robot(50, 250, _robot1);
+            Robot2 = new Robot(500, 250, _robot2);
+        }
+        public void getBoardSizes()
+        { 
+            inputForm = new InputForm();
+            inputForm.Show(); 
+            inputForm.title.Text = "Enter board size Ex:10 5";
+            inputForm.note.Text = "Please enter board size for x,y locations";
+            inputForm.button1.Click += GetBoardSizes;
+        }
+        private void GetBoardSizes(object sender, EventArgs e)
         {
-            if (onRobot != null)
+            try
             {
-                if (Convert.ToChar(e.KeyChar).ToString().ToUpper() == "L")
-                {
-                    onRobot.TurnLeft();
-                }
-                else if (Convert.ToChar(e.KeyChar).ToString().ToUpper() == "R")
-                {
-                    onRobot.TurnRight();
-                }
-                else if (Convert.ToChar(e.KeyChar).ToString().ToUpper() == "M")
-                {
-                    onRobot.Go();
-                }
+                string[] sizes = inputForm.enteredText.Trim().Split(' ');
+                boardWith = int.Parse(sizes[0]);
+                boardHeight = int.Parse(sizes[1]);
+                stepWidth = 500 / boardWith;
+                stepHeight = 250 / boardHeight;
+                inputForm.Close();
+                Visible = true;
+                setConfiguration();
+                enterFirstLocation();
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Please select the robot ago");
+                new InvalidOperationException("Please enter board size for x,y locations");
+                MessageBox.Show("Please enter board size for x,y locations Ex:10 5","Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Console.Write(ex.Message);
             }
         }
-     
+
         public void enterFirstLocation()
         {
-            Hide();
+           
             inputForm = new InputForm();
             inputForm.Show();
             inputForm.title.Text = "Enter robot first location Ex:3 2";
@@ -79,7 +95,9 @@ namespace NasaRobots
             }
             catch (Exception ex)
             {
-                new InvalidOperationException("Please enter first location as true Ex: 3 2");
+                MessageBox.Show("Please select robot and enter first location as true Ex: 3 2", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                new InvalidOperationException(ex.Message);
+                Console.Write(ex.Message);
             }
         }
 
@@ -124,10 +142,39 @@ namespace NasaRobots
                     MessageBox.Show("Please select the robot ago");
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 new InvalidOperationException("Please enter commands as true Ex:LLRRMMRM");
+                MessageBox.Show("Invalid commands! Please enter commands as true Ex:LLRRMMRM", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Console.WriteLine(ex.Message);
             }
+        }
+        void KeyListener(object sender, KeyPressEventArgs e)
+        {
+            if (onRobot != null)
+            {
+                if (Convert.ToChar(e.KeyChar).ToString().ToUpper() == "L")
+                {
+                    onRobot.TurnLeft();
+                }
+                else if (Convert.ToChar(e.KeyChar).ToString().ToUpper() == "R")
+                {
+                    onRobot.TurnRight();
+                }
+                else if (Convert.ToChar(e.KeyChar).ToString().ToUpper() == "M")
+                {
+                    onRobot.Go();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select the robot ago");
+            }
+        }
+
+        private void March_Shown(object sender, EventArgs e)
+        {
+            this.Hide();
         }
     }
 }

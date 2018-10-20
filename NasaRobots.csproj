@@ -96,5 +96,11 @@
   <ItemGroup>
     <None Include="Resources\robot2.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\space-315uqsztl4woiv3nk6xi4g.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\compass_PNG25572.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

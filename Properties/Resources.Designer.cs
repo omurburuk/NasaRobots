@@ -63,6 +63,16 @@ namespace NasaRobots.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap compass_PNG25572 {
+            get {
+                object obj = ResourceManager.GetObject("compass_PNG25572", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap robot2 {
             get {
                 object obj = ResourceManager.GetObject("robot2", resourceCulture);
@@ -76,6 +86,16 @@ namespace NasaRobots.Properties {
         internal static System.Drawing.Bitmap ropot1 {
             get {
                 object obj = ResourceManager.GetObject("ropot1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap space_315uqsztl4woiv3nk6xi4g {
+            get {
+                object obj = ResourceManager.GetObject("space-315uqsztl4woiv3nk6xi4g", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

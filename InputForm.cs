@@ -21,6 +21,8 @@ namespace NasaRobots
         private void InputForm_Load(object sender, EventArgs e)
         {
             textBox1.CharacterCasing = CharacterCasing.Upper;
+            BringToFront();
+            FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

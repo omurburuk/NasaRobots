@@ -33,8 +33,8 @@ namespace NasaRobots
         }
         public void SetLocations()
         {
-            this.LocationX = RobotIcon.Location.X/50;
-            this.LocationY = RobotIcon.Location.Y/50;
+            this.LocationX = RobotIcon.Location.X/March.stepWidth;
+            this.LocationY = RobotIcon.Location.Y/ March.stepHeight;
             foreach (Control c in RobotIcon.Controls)
             {
                 if (c.Tag != null)
@@ -60,20 +60,20 @@ namespace NasaRobots
         {
             if (Perspective == 0) 
                 RobotIcon.Location = new Point(
-                        (RobotIcon.Location.X - 50) < 0 ? 0 : RobotIcon.Location.X - 50,
+                        (RobotIcon.Location.X - March.stepWidth) < 0 ? 0 : RobotIcon.Location.X - March.stepWidth,
                         RobotIcon.Location.Y);
             else if (Perspective == 90)
                 RobotIcon.Location = new Point(
                     RobotIcon.Location.X,
-                    (RobotIcon.Location.Y + 50 > (250)) ? 250 : RobotIcon.Location.Y + 50);
+                    (RobotIcon.Location.Y + March.stepHeight > (250)) ? 250 : RobotIcon.Location.Y + March.stepHeight);
             else if (Perspective == 180)
                 RobotIcon.Location = new Point(
-                    (RobotIcon.Location.X + 50 > (500 )) ? 500 : RobotIcon.Location.X + 50,
+                    (RobotIcon.Location.X + March.stepWidth > (500 )) ? 500 : RobotIcon.Location.X + March.stepWidth,
                     RobotIcon.Location.Y);
             else if (Perspective == 270)
                 RobotIcon.Location = new Point(
                     RobotIcon.Location.X,
-                   (RobotIcon.Location.Y - 50) < 0 ? 0 : RobotIcon.Location.Y - 50);
+                   (RobotIcon.Location.Y - March.stepHeight) < 0 ? 0 : RobotIcon.Location.Y - March.stepHeight);
             SetLocations();
         }
 
